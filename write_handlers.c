@@ -135,7 +135,7 @@ return (write(1, &buffer[ind], length));
 *           * Return: Number of written chars.
 */
 int write_unsgnd(int is_negative, int ind,
-buffer[],
+char buffer[],
 int flags, int width, int precision, int size)
 {
 /* The number is stored at the bufer's right and starts at position i */
@@ -199,6 +199,7 @@ buffer[--ind] = '0';
 if (extra_c)
 buffer[--ind] = extra_c;
 return (write(1, &buffer[ind], length) + write(1, &buffer[3], i - 3));
+}
 else if (!(flags & F_MINUS) && padd == ' ')/* extra char to left of buffer */
 {
 buffer[--ind] = 'x';
